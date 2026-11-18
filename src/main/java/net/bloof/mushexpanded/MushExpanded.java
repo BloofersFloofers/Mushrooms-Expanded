@@ -1,5 +1,6 @@
 package net.bloof.mushexpanded;
 
+import net.bloof.mushexpanded.block.ModBlocks;
 import net.bloof.mushexpanded.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -37,6 +38,7 @@ public class MushExpanded {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
 
         // Register the item to a creative tab
@@ -53,6 +55,10 @@ public class MushExpanded {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.EMPTYAGARPLATE);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModBlocks.MYCELIAL_DIRT);
         }
     }
 
