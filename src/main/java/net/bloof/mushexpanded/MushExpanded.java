@@ -57,8 +57,12 @@ public class MushExpanded {
             event.accept(ModItems.EMPTYAGARPLATE);
         }
 
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModItems.PORTABELLA_MUSHROOM);
+        }
+
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(ModBlocks.MYCELIAL_DIRT);
+            event.accept(ModBlocks.PORTABELLA_MYCELIUM);
         }
     }
 

@@ -13,6 +13,10 @@ public class ModItems {
             () -> new Item(new Item.Properties())
     );
 
+    public static final DeferredItem<Item> PORTABELLA_MUSHROOM = ITEMS.register("portabellamushroom",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.PORTABELLA_MUSHROOM))
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

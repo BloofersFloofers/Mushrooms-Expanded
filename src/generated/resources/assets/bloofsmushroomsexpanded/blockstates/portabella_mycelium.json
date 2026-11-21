@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "wetness=0": {
+      "model": "bloofsmushroomsexpanded:block/portabella_mycelium0"
+    },
+    "wetness=1": {
+      "model": "bloofsmushroomsexpanded:block/portabella_mycelium1"
+    },
+    "wetness=2": {
+      "model": "bloofsmushroomsexpanded:block/portabella_mycelium2"
+    },
+    "wetness=3": {
+      "model": "bloofsmushroomsexpanded:block/portabella_mycelium3"
+    }
+  }
+}

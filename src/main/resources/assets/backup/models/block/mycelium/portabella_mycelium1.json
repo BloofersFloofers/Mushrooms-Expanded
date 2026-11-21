@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "bloofsmushroomsexpanded:block/mycelium/portabella_mycelium2"
+  }
+}

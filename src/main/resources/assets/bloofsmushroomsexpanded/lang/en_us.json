@@ -1,5 +1,7 @@
 {
   "item.bloofsmushroomsexpanded.emptyagarplate": "Empty Agar Plate",
+  "item.bloofsmushroomsexpanded.portabellamushroom": "Portabella Mushroom",
 
-  "block.bloofsmushroomsexpanded.mycelial_dirt": "Mycelial Dirt"
+  "block.bloofsmushroomsexpanded.portabella_mycelium": "Portabella Mycelium",
+  "block.bloofsmushroomsexpanded.portabella_mushroom": "Portabella Mushroom"
 }

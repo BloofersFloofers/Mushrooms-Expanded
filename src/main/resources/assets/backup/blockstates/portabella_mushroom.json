@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "bloofsmushroomsexpanded:block/crop/portabella_stage0"
+    },
+    "age=1": {
+      "model": "bloofsmushroomsexpanded:block/crop/portabella_stage1"
+    },
+    "age=2": {
+      "model": "bloofsmushroomsexpanded:block/crop/portabella_stage2"
+    },
+    "age=3": {
+      "model": "bloofsmushroomsexpanded:block/crop/portabella_stage3"
+    }
+  }
+}
