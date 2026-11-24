@@ -1,0 +1,13 @@
+{
+  "type": "bloofsmushroomsexpanded:mycelium_patch",
+  "config": {
+    "state": {
+      "Name": "bloofsmushroomsexpanded:portabella_mycelium",
+      "Properties": {
+        "wetness": "0"
+      }
+    },
+    "tries": 6,
+    "xz_spread": 6
+  }
+}

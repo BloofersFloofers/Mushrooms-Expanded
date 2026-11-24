@@ -2,15 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "G": {
-      "tag": "c:glass_blocks"
+    "A": {
+      "item": "bloofsmushroomsexpanded:agarcube"
     }
   },
   "pattern": [
-    "GG"
+    "AA",
+    "AA"
   ],
   "result": {
     "count": 1,
-    "id": "bloofsmushroomsexpanded:emptyagarplate"
+    "id": "bloofsmushroomsexpanded:agar_block"
   }
 }

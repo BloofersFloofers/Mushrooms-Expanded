@@ -1,0 +1,28 @@
+{
+  "feature": "bloofsmushroomsexpanded:portabella_mycelium",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 48
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:count",
+      "count": 10
+    },
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": -1,
+      "y_spread": 0
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

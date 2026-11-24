@@ -12,6 +12,7 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -22,6 +23,7 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.predicates.AllOfCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.neoforged.fml.common.Mod;
 
 import java.util.Set;
@@ -38,6 +40,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.PORTABELLA_MYCELIUM.get());
+        dropSelf(ModBlocks.AGAR_BLOCK.get());
+        add(ModBlocks.RED_ALGAE.get(), createMultiItemTable(ModItems.RED_ALGAE_PIECE, 4.0F));
         add(ModBlocks.PORTABELLA_MUSHROOM.get(),
                 createCropDropsNoSeeds(ModBlocks.PORTABELLA_MUSHROOM.get(), ModItems.PORTABELLA_MUSHROOM.get(), lootItemConditionBuilder));
 
@@ -46,6 +50,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected LootTable.Builder createCropDropsNoSeeds(Block cropBlock, Item grownCropItem, LootItemCondition.Builder dropGrownCropCondition) {
         HolderLookup.RegistryLookup<Enchantment> registrylookup = registries.lookupOrThrow(Registries.ENCHANTMENT);
         return applyExplosionDecay(cropBlock, LootTable.lootTable().withPool(LootPool.lootPool().add((LootItem.lootTableItem(grownCropItem).when(dropGrownCropCondition)))));
+    }
+
+    public LootTable.Builder createMultiItemTable(ItemLike item, Float amount) {
+        return LootTable.lootTable().withPool(this.applyExplosionCondition(item, LootPool.lootPool().setRolls(ConstantValue.exactly(amount)).add(LootItem.lootTableItem(item))));
     }
 
     @Override

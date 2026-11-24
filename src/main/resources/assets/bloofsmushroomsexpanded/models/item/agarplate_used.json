@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "bloofsmushroomsexpanded:item/agarplate",
+    "layer1": "bloofsmushroomsexpanded:item/agarplate_overlay"
+  }
+}

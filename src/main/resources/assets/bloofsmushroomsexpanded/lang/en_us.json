@@ -1,7 +1,14 @@
 {
   "item.bloofsmushroomsexpanded.emptyagarplate": "Empty Agar Plate",
   "item.bloofsmushroomsexpanded.portabellamushroom": "Portabella Mushroom",
+  "item.bloofsmushroomsexpanded.redalgaepiece": "Red Algae Piece",
+  "item.bloofsmushroomsexpanded.blanchedredalgae": "Blanched Red Algae",
+  "item.bloofsmushroomsexpanded.filtercloth": "Filter Cloth",
+  "item.bloofsmushroomsexpanded.agarcube": "Agar Cube",
 
   "block.bloofsmushroomsexpanded.portabella_mycelium": "Portabella Mycelium",
-  "block.bloofsmushroomsexpanded.portabella_mushroom": "Portabella Mushroom"
+  "block.bloofsmushroomsexpanded.portabella_mushroom": "Portabella Mushroom",
+  "block.bloofsmushroomsexpanded.red_algae": "Red Algae",
+
+  "tooltip.bloofsmushroomsexpanded.emptyagarplate" : "There is no spores in here."
 }

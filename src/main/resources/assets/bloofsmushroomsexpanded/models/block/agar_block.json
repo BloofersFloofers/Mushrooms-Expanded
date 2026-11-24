@@ -1,0 +1,33 @@
+{   "parent": "minecraft:block/block",
+  "textures": {
+    "out": "bloofsmushroomsexpanded:block/agar_block",
+    "in": "bloofsmushroomsexpanded:block/agar_block_in",
+    "particle": "bloofsmushroomsexpanded:block/agar_block"
+  },
+  "render_type": "minecraft:translucent",
+  "elements": [
+    {   "from": [ 0, 0, 0 ],
+      "to": [ 16, 16, 16 ],
+      "faces": {
+        "down":  { "texture": "#out", "cullface": "down" },
+        "up":    { "texture": "#out", "cullface": "up" },
+        "north": { "texture": "#out", "cullface": "north" },
+        "south": { "texture": "#out", "cullface": "south" },
+        "west":  { "texture": "#out", "cullface": "west" },
+        "east":  { "texture": "#out", "cullface": "east" }
+      }
+    },
+    {   "from": [ 3, 3, 3 ],
+      "to": [ 13, 13, 13 ],
+      "faces": {
+        "down":  { "uv": [ 1, 1, 15, 15 ], "texture": "#in"},
+        "up":    { "uv": [ 1, 1, 15, 15 ], "texture": "#in"},
+        "north": { "uv": [ 1, 1, 15, 15 ], "texture": "#in"},
+        "south": { "uv": [ 1, 1, 15, 15 ], "texture": "#in"},
+        "west":  { "uv": [ 1, 1, 15, 15 ], "texture": "#in"},
+        "east":  { "uv": [ 1, 1, 15, 15 ], "texture": "#in"}
+      }
+    }
+  ]
+}
+

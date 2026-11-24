@@ -1,8 +1,14 @@
 package net.bloof.mushexpanded;
 
 import net.bloof.mushexpanded.block.ModBlocks;
+import net.bloof.mushexpanded.component.ModDataComponents;
 import net.bloof.mushexpanded.item.ModItems;
+import net.bloof.mushexpanded.util.ModItemProperties;
+import net.bloof.mushexpanded.worldgen.ModFeatures;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -40,6 +46,9 @@ public class MushExpanded {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModDataComponents.register(modEventBus);
+        ModFeatures.register(modEventBus);
+
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -54,11 +63,23 @@ public class MushExpanded {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(ModItems.EMPTYAGARPLATE);
+            event.accept(ModItems.AGARPLATE);
+            event.accept(ModItems.FILTER_CLOTH);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.RED_ALGAE_PIECE);
+            event.accept(ModItems.BLANCHED_RED_ALGAE);
+            event.accept(ModItems.AGAR_CUBE);
         }
 
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModItems.PORTABELLA_MUSHROOM);
+            event.accept(ModBlocks.RED_ALGAE);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.accept(ModBlocks.AGAR_BLOCK);
         }
 
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
@@ -69,6 +90,13 @@ public class MushExpanded {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+    }
+    @EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            ModItemProperties.addCustomItemProperties();
+        }
     }
 
 

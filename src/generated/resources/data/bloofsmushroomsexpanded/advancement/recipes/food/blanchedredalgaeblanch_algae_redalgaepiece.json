@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_redalgaepiece": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloofsmushroomsexpanded:redalgaepiece"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bloofsmushroomsexpanded:blanchedredalgaeblanch_algae_redalgaepiece"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_redalgaepiece"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bloofsmushroomsexpanded:blanchedredalgaeblanch_algae_redalgaepiece"
+    ]
+  }
+}

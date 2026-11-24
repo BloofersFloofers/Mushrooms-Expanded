@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_agar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloofsmushroomsexpanded:agarcube"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_glass": {
       "conditions": {
         "items": [
@@ -13,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bloofsmushroomsexpanded:emptyagarplate"
+        "recipe": "bloofsmushroomsexpanded:agarplate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +31,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_glass"
+      "has_glass",
+      "has_agar"
     ]
   ],
   "rewards": {
     "recipes": [
-      "bloofsmushroomsexpanded:emptyagarplate"
+      "bloofsmushroomsexpanded:agarplate"
     ]
   }
 }

@@ -19,9 +19,18 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         basicItem(ModItems.PORTABELLA_MUSHROOM.get());
-        basicItem(ModItems.EMPTYAGARPLATE.get());
+        basicItem(ModItems.RED_ALGAE_PIECE.get());
+        basicItem(ModItems.BLANCHED_RED_ALGAE.get());
+        basicItem(ModItems.FILTER_CLOTH.get());
+        basicItem(ModItems.AGAR_CUBE.get());
+        //basicItem(ModItems.EMPTYAGARPLATE.get());
         blockItem(ModBlocks.PORTABELLA_MYCELIUM.getId());
+        basicItemBlockNonBlock(ModBlocks.RED_ALGAE.getId());
 
+    }
+
+    public ItemModelBuilder basicItemBlockNonBlock(ResourceLocation item) {
+        return ((this.getBuilder(item.toString())).parent(new ModelFile.UncheckedModelFile("item/generated"))).texture("layer0", ResourceLocation.fromNamespaceAndPath(item.getNamespace(), "block/" + item.getPath()));
     }
 
     public ItemModelBuilder blockItem(ResourceLocation item) {

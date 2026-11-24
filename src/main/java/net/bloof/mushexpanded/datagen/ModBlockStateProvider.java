@@ -25,6 +25,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         makeMyceliumBlock(ModBlocks.PORTABELLA_MYCELIUM.get(), "portabella_mycelium", "portabella_mycelium");
         makeMushroomCrop(ModBlocks.PORTABELLA_MUSHROOM.get(), "portabella_stage", "portabella");
+        simpleBlock(ModBlocks.RED_ALGAE.get(), models().cross("red_algae",
+                ResourceLocation.fromNamespaceAndPath(MushExpanded.MOD_ID, "block/red_algae")).renderType("cutout"));
+
     }
 
     public void makeMyceliumBlock(MyceliumBlock block, String modelName, String textureName) {
