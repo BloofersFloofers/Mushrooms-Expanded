@@ -1,6 +1,8 @@
 package net.bloof.mushexpanded;
 
 import net.bloof.mushexpanded.block.ModBlocks;
+import net.bloof.mushexpanded.block.entity.ModBlockEntities;
+import net.bloof.mushexpanded.block.entity.renderer.IncubatorBlockEntityRenderer;
 import net.bloof.mushexpanded.component.ModDataComponents;
 import net.bloof.mushexpanded.item.ModItems;
 import net.bloof.mushexpanded.util.ModItemProperties;
@@ -9,6 +11,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -45,6 +48,7 @@ public class MushExpanded {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         ModDataComponents.register(modEventBus);
         ModFeatures.register(modEventBus);
@@ -80,6 +84,7 @@ public class MushExpanded {
 
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(ModBlocks.AGAR_BLOCK);
+            event.accept(ModBlocks.INCUBATOR_BLOCK);
         }
 
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
@@ -96,6 +101,10 @@ public class MushExpanded {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ModItemProperties.addCustomItemProperties();
+        }
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.INCUBATOR_BE.get(), IncubatorBlockEntityRenderer::new);
         }
     }
 

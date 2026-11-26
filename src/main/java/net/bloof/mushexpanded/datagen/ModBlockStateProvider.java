@@ -7,6 +7,7 @@ import net.bloof.mushexpanded.block.custom.MushroomCrop;
 import net.bloof.mushexpanded.block.custom.MyceliumBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.MushroomBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
@@ -30,13 +31,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     }
 
-    public void makeMyceliumBlock(MyceliumBlock block, String modelName, String textureName) {
+    public void makeMyceliumBlock(Block block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> statesMycelium(state, block, modelName, textureName);
 
         getVariantBuilder(block).forAllStates(function);
     }
 
-    private ConfiguredModel[] statesMycelium(BlockState state, MyceliumBlock block, String modelName, String textureName) {
+    private ConfiguredModel[] statesMycelium(BlockState state, Block block, String modelName, String textureName) {
         ConfiguredModel[] models = new ConfiguredModel[1];
         models[0] = new ConfiguredModel(models().cubeAll(modelName + state.getValue(((MyceliumBlock) block).getMoistureProperty()),
                 ResourceLocation.fromNamespaceAndPath(MushExpanded.MOD_ID, "block/mycelium/" + textureName + state.getValue(((MyceliumBlock) block).getMoistureProperty()))).renderType("cutout"));

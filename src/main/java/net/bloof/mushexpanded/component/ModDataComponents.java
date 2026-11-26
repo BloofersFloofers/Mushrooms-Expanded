@@ -22,6 +22,11 @@ public class ModDataComponents {
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Block>> FROM_MUSHROOM = register("from_mushroom",
             builder -> builder.persistent(BuiltInRegistries.BLOCK.byNameCodec()).networkSynchronized(ByteBufCodecs.registry(Registries.BLOCK)));
 
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> MYCELIUM_GROWTH = register("mycelium_growth",
+            integerBuilder -> integerBuilder.networkSynchronized(ByteBufCodecs.VAR_INT).persistent(Codec.INT));
+
+
+
     private static <T>DeferredHolder<DataComponentType<?>, DataComponentType<T>> register(String name,
                                                                                           UnaryOperator<DataComponentType.Builder<T>> builderOperator) {
         return DATA_COMPONENT_TYPES.register(name, () -> builderOperator.apply(DataComponentType.builder()).build());

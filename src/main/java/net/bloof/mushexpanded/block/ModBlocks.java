@@ -1,11 +1,8 @@
 package net.bloof.mushexpanded.block;
 
 import net.bloof.mushexpanded.MushExpanded;
-import net.bloof.mushexpanded.block.custom.MushroomCrop;
-import net.bloof.mushexpanded.block.custom.MyceliumBlock;
-import net.bloof.mushexpanded.block.custom.RedAlgaeCrop;
+import net.bloof.mushexpanded.block.custom.*;
 import net.bloof.mushexpanded.item.ModItems;
-import net.bloof.mushexpanded.block.custom.AgarBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -51,6 +48,10 @@ public class ModBlocks {
                     .noOcclusion()
                     .speedFactor(0.5F)
                     .jumpFactor(0.5F)), true);
+
+    public static final DeferredBlock<Block> INCUBATOR_BLOCK = registerBlock("incubator_block",
+            () -> new IncubatorBlock(BlockBehaviour.Properties.of().noOcclusion()
+                    .randomTicks()), true);
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block, boolean registerBlockItem) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

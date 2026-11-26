@@ -38,6 +38,7 @@ public class AgarPlateItem extends Item {
             if (!level.isClientSide()) {
                 if (((MushroomCrop) clickedBlock).getAge(clickedBlockState) == 3)  {
                     context.getItemInHand().set(ModDataComponents.FROM_MUSHROOM, clickedBlock);
+                    context.getItemInHand().set(ModDataComponents.MYCELIUM_GROWTH, 0);
                     return InteractionResult.SUCCESS;
                 }
 
@@ -53,9 +54,12 @@ public class AgarPlateItem extends Item {
             tooltipComponents.add(Component.literal("Contains spores of ")
                             .append(stack.get(ModDataComponents.FROM_MUSHROOM).getName())
                     );
+            tooltipComponents.add(Component.literal(stack.get(ModDataComponents.MYCELIUM_GROWTH).toString()));
         } else {
             tooltipComponents.add(Component.translatable("tooltip.bloofsmushroomsexpanded.emptyagarplate"));
         }
+
+
 
     }
 }
